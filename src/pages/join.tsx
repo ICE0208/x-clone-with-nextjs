@@ -12,7 +12,7 @@ export default function Login() {
       </header>
       <main className="flex flex-grow items-center justify-center">
         <div className="fle flex w-[300px] flex-col">
-          <h3 className="text-[26px] font-bold">X 로그인하기</h3>
+          <h3 className="text-[26px] font-bold">지금 X에 가입하세요</h3>
           <div className="mt-6 space-y-4">
             <Button text="₲oogle 계정으로 로그인하기" kind="white-black" />
             <Button text="₳pple로 로그인하기" kind="white-black" />
@@ -23,23 +23,12 @@ export default function Login() {
               <span className="bg-black px-[8px]">또는</span>
             </div>
           </div>
-          <form className="mt-2 space-y-4">
-            <input
-              className="h-[50px] w-full border-[0.7px] border-[#546571] bg-transparent p-3 text-[#546571] focus:outline-none "
-              placeholder="이메일 주소"
-            ></input>
-            <input
-              className="h-[50px] w-full border-[0.7px] border-[#546571] bg-transparent p-3 text-[#546571] focus:outline-none "
-              placeholder="비밀번호"
-            ></input>
-            <Button text="로그인" kind="white-black" />
-          </form>
-          <div className="mt-4 space-y-8">
-            <Button text="비밀번호를 잊으셨나요?" kind="transparent-white" />
+          <div className="space-y-8">
+            <Button text="계정 만들기" kind="white-black" />
             <div className="text-sm">
-              <span className="text-[#728b9b]">계정이 없으신가요? </span>
+              <span className="text-[#728b9b]">이미 계정이 있으신가요? </span>
               <span className="font-semibold text-[#1D9BF1]">
-                <Link href="join">가입하기</Link>
+                <Link href="login">로그인</Link>
               </span>
             </div>
           </div>
