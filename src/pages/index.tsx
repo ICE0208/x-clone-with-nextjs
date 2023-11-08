@@ -12,16 +12,16 @@ export default function Home() {
           <div className="flex w-[300px] flex-col py-1">
             <h3 className="text-[22px] font-semibold">지금 가입하세요.</h3>
             <div className="my-3 space-y-4">
-              <Button text="₲oogle 계정으로 가입하기" kind="join-social" />
-              <Button text="₳pple에서 가입하기" kind="join-social" />
+              <Button text="₲oogle 계정으로 가입하기" kind="white-black" />
+              <Button text="₳pple에서 가입하기" kind="white-black" />
             </div>
             <div className="self-center py-2">
               <span>또는</span>
             </div>
-            <Button text="계정 만들기" kind="join" />
+            <Button text="계정 만들기" kind="blue-white" />
             <div className="my-14 space-y-4 text-lg">
               <span className="font-semibold">이미 가입하셨나요?</span>
-              <Button text="로그인" kind="login" />
+              <Button text="로그인" kind="transparent-blue" />
             </div>
           </div>
         </div>
