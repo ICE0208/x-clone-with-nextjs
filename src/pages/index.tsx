@@ -1,6 +1,9 @@
 import Button from "@/components/button";
+import { routerPushFn } from "@/lib/client/utils";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <main className="h-screen bg-black text-white">
       <div className="flex h-full flex-col items-center justify-center px-8 py-6">
@@ -18,10 +21,18 @@ export default function Home() {
             <div className="self-center py-2">
               <span>또는</span>
             </div>
-            <Button text="계정 만들기" kind="blue-white" />
+            <Button
+              text="계정 만들기"
+              kind="blue-white"
+              onClick={routerPushFn(router, "/join")}
+            />
             <div className="my-14 space-y-4 text-lg">
               <span className="font-semibold">이미 가입하셨나요?</span>
-              <Button text="로그인" kind="transparent-blue" />
+              <Button
+                text="로그인"
+                kind="transparent-blue"
+                onClick={routerPushFn(router, "/login")}
+              />
             </div>
           </div>
         </div>
