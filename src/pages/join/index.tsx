@@ -1,7 +1,10 @@
 import Button from "@/components/button";
+import { routerPushFn } from "@/lib/client/utils";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Login() {
+  const router = useRouter();
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
       <header className="flex h-12 items-center justify-center">
@@ -24,7 +27,11 @@ export default function Login() {
             </div>
           </div>
           <div className="space-y-8">
-            <Button text="계정 만들기" kind="white-black" />
+            <Button
+              text="계정 만들기"
+              kind="white-black"
+              onClick={routerPushFn(router, `${router.pathname}/create`)}
+            />
             <div className="text-sm">
               <span className="text-[#728b9b]">이미 계정이 있으신가요? </span>
               <span className="font-semibold text-[#1D9BF1]">
