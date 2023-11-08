@@ -1,5 +1,7 @@
 import Button from "@/components/button";
+import Input from "@/components/input";
 import Link from "next/link";
+import { useForm } from "react-hook-form";
 
 export default function Login() {
   return (
@@ -24,14 +26,8 @@ export default function Login() {
             </div>
           </div>
           <form className="mt-2 space-y-4">
-            <input
-              className="h-[50px] w-full border-[0.7px] border-[#546571] bg-transparent p-3 text-[#546571] focus:outline-none "
-              placeholder="이메일 주소"
-            ></input>
-            <input
-              className="h-[50px] w-full border-[0.7px] border-[#546571] bg-transparent p-3 text-[#546571] focus:outline-none "
-              placeholder="비밀번호"
-            ></input>
+            <Input placeholder="이메일 주소" />
+            <Input placeholder="비밀번호" />
             <Button text="로그인" kind="white-black" />
           </form>
           <div className="mt-4 space-y-8">
