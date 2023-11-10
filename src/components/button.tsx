@@ -4,7 +4,7 @@ import { MouseEvent } from "react";
 interface ButtonProps {
   text?: string;
   kind: "blue-white" | "white-black" | "transparent-blue" | "transparent-white";
-  onClick?: (event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => void;
+  onClick?: (event: MouseEvent) => void;
   [key: string]: any;
 }
 
@@ -20,25 +20,28 @@ export default function Button({
   return (
     <>
       {kind === "white-black" && (
-        <div
+        <button
+          type="submit"
           onClick={onClick}
           className={cls(DEFAULT_CLASS, "bg-white font-semibold text-black")}
           {...rest}
         >
-          <span>{text}</span>
-        </div>
+          {text}
+        </button>
       )}
       {kind === "blue-white" && (
-        <div
+        <button
+          type="submit"
           onClick={onClick}
           className={cls(DEFAULT_CLASS, "bg-[#1D9BF1] font-bold text-white")}
           {...rest}
         >
-          <span>{text}</span>
-        </div>
+          {text}
+        </button>
       )}
       {kind === "transparent-blue" && (
-        <div
+        <button
+          type="submit"
           onClick={onClick}
           className={cls(
             DEFAULT_CLASS,
@@ -46,11 +49,12 @@ export default function Button({
           )}
           {...rest}
         >
-          <span>{text}</span>
-        </div>
+          {text}
+        </button>
       )}
       {kind === "transparent-white" && (
-        <div
+        <button
+          type="submit"
           onClick={onClick}
           className={cls(
             DEFAULT_CLASS,
@@ -58,8 +62,8 @@ export default function Button({
           )}
           {...rest}
         >
-          <span>{text}</span>
-        </div>
+          {text}
+        </button>
       )}
     </>
   );

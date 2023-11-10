@@ -3,7 +3,7 @@ import { routerPushFn } from "@/lib/client/utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function Login() {
+export default function Join() {
   const router = useRouter();
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
