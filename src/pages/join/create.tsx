@@ -1,6 +1,9 @@
 import Button from "@/components/button";
 import Input from "@/components/input";
+import useMutation from "@/lib/client/useMutation";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 interface CreateForm {
@@ -9,14 +12,26 @@ interface CreateForm {
   nickname: string;
 }
 
-export default function Create() {
-  const { register, watch, handleSubmit } = useForm<CreateForm>();
+interface EnterMutationResult {
+  ok: boolean;
+}
 
-  console.log(watch());
+export default function Create() {
+  const { register, handleSubmit } = useForm<CreateForm>();
+  const [enter, { loading: enterLoading, data: enterData }] =
+    useMutation<EnterMutationResult>("/api/users/enter");
 
   const onSubmit: SubmitHandler<CreateForm> = (data) => {
-    console.log(data);
+    if (enterLoading) return;
+    enter(data);
   };
+
+  const router = useRouter();
+  useEffect(() => {
+    if (enterData?.ok) {
+      router.push("/");
+    }
+  }, [enterData, router]);
 
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
