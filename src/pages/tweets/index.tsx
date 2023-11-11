@@ -34,8 +34,7 @@ export default function Tweets() {
   } = useSWR<TweetsResponse>("/api/tweets");
 
   const handleLogoutButton = async () => {
-    await logout();
-    router.replace("/");
+    logout();
   };
 
   return (

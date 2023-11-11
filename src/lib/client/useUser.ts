@@ -17,9 +17,7 @@ export default function useUser() {
       body: JSON.stringify(data),
     });
     if (response.ok) {
-      const json = await response.json();
-      console.log(json);
-      router.replace("/");
+      router.replace("/login");
     } else {
       console.error("로그아웃 실패. 서버 응답을 확인하십시오.");
     }
