@@ -1,7 +1,10 @@
 import useOnlyLoggedIn from "@/lib/client/middleware/useOnlyLoggedIn";
+import useMutation from "@/lib/client/useMutation";
 import useUser from "@/lib/client/useUser";
 import { Tweet } from "@prisma/client";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import useSWR from "swr";
 
 interface TweetWithLikesCnt extends Tweet {
@@ -18,14 +21,23 @@ interface TweetsResponse {
   tweets: TweetWithLikesCnt[];
 }
 
+interface LogoutResponse {
+  ok: boolean;
+}
+
 export default function Tweets() {
-  const { isLoading: loginCheckLoading } = useOnlyLoggedIn();
-  const { user, isLoading: isUserLoading } = useUser();
+  const router = useRouter();
+  const { user, isLoading: isUserLoading, logout } = useUser();
   const {
     data: tweetsData,
     error,
     isLoading,
   } = useSWR<TweetsResponse>("/api/tweets");
+
+  const handleLogoutButton = async () => {
+    await logout();
+    router.replace("/");
+  };
 
   return (
     <main className="h-screen bg-black text-white">
@@ -33,6 +45,9 @@ export default function Tweets() {
         <>
           <h1>Tweets</h1>
           <Link href="/tweets/upload">Upload</Link>
+          <div>
+            <button onClick={handleLogoutButton}>Logout</button>
+          </div>
           {tweetsData.tweets.map((tweet) => {
             return (
               <div key={tweet.id}>
