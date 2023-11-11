@@ -3,7 +3,8 @@ import withHandler, { DefaultResponseType } from "@/lib/server/withHandler";
 import { withApiSession } from "@/lib/server/withSession";
 import { NextApiRequest, NextApiResponse } from "next";
 
-interface Profile {
+export interface Profile {
+  id: number;
   email: string;
   name: string;
 }
@@ -27,6 +28,7 @@ async function handler(
     profile = await client.user.findUnique({
       where: { id: req.session.user?.id },
       select: {
+        id: true,
         email: true,
         name: true,
       },
