@@ -12,11 +12,20 @@ async function handler(
 ) {
   const { email, password, nickname } = req.body;
 
-  let user = await client?.user.findUnique({
-    where: { email: email },
-  });
+  let user;
+  try {
+    user = await client?.user.findUnique({
+      where: { email: email },
+    });
+  } catch (error) {
+    console.log(`DB Error | User Find | error: ${error}`);
+    return res.status(500).json({ ok: false, msg: "DB Error | User Find" });
+  }
+
   if (user) {
-    return res.json({ ok: false, msg: "This email already exists." });
+    return res
+      .status(200)
+      .json({ ok: false, msg: "This email already exists." });
   }
 
   try {
@@ -28,12 +37,11 @@ async function handler(
       },
     });
   } catch (error) {
-    console.log(error);
-
-    return res.json({ ok: false, msg: "DB Error | User Create" });
+    console.log(`DB Error | User Create | error: ${error}`);
+    return res.status(500).json({ ok: false, msg: "DB Error | User Create" });
   }
 
-  res.json({ ok: true, msg: "Good." });
+  res.status(200).json({ ok: true, msg: "Good." });
 }
 
 export default withHandler({

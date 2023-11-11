@@ -14,12 +14,15 @@ interface CreateForm {
 
 interface EnterMutationResult {
   ok: boolean;
+  msg?: string;
 }
 
 export default function Create() {
   const { register, handleSubmit } = useForm<CreateForm>();
-  const [enter, { loading: enterLoading, data: enterData }] =
-    useMutation<EnterMutationResult>("/api/users/enter");
+  const [
+    enter,
+    { loading: enterLoading, data: enterData, status: enterStatus },
+  ] = useMutation<EnterMutationResult>("/api/users/enter");
 
   const onSubmit: SubmitHandler<CreateForm> = (data) => {
     if (enterLoading) return;
@@ -28,10 +31,14 @@ export default function Create() {
 
   const router = useRouter();
   useEffect(() => {
-    if (enterData?.ok) {
-      router.push("/");
+    if (enterStatus === 200) {
+      if (enterData?.ok) {
+        router.push("/");
+      } else if (enterData?.ok === false) {
+        alert(enterData.msg);
+      }
     }
-  }, [enterData, router]);
+  }, [enterData, router, enterStatus]);
 
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
