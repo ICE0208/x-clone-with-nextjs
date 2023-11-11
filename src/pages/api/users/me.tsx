@@ -7,14 +7,14 @@ interface Profile {
   email: string;
   name: string;
 }
-interface ResponseType extends DefaultResponseType {
+export interface MeResponseType extends DefaultResponseType {
   msg: string;
   profile: Profile | null;
 }
 
 async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ResponseType>,
+  res: NextApiResponse<MeResponseType>,
 ) {
   if (!req.session.user) {
     return res
