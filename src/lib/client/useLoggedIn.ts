@@ -6,5 +6,5 @@ export default function useLoggedIn() {
     "/api/users/loginCheck",
   );
 
-  return { loggedIn: data?.isLoggedIn, isLoading };
+  return { isLoggedIn: data?.isLoggedIn, isLoading };
 }

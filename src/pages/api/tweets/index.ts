@@ -13,7 +13,27 @@ async function handler(
   res: NextApiResponse<TweetResponseType>,
 ) {
   if (req.method === "GET") {
-    return res.json({ ok: true });
+    try {
+      const tweets = await client.tweet.findMany({
+        include: {
+          user: {
+            select: {
+              name: true,
+            },
+          },
+          _count: {
+            select: {
+              likes: true,
+            },
+          },
+        },
+      });
+
+      return res.json({ ok: true, tweets });
+    } catch (error) {
+      console.log(`DB Error | Tweet Find | error: ${error}`);
+      return res.status(500).json({ ok: false, msg: "DB Error | Tweet Find" });
+    }
   }
   if (req.method === "POST") {
     const {
@@ -53,8 +73,10 @@ async function handler(
         msg: "Good.",
       });
     } catch (error) {
-      console.log(`DB Error | User Find | error: ${error}`);
-      return res.status(500).json({ ok: false, msg: "DB Error | User Find" });
+      console.log(`DB Error | Tweet Create | error: ${error}`);
+      return res
+        .status(500)
+        .json({ ok: false, msg: "DB Error | Tweet Create" });
     }
   }
 }

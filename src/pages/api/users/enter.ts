@@ -1,5 +1,6 @@
 import client from "@/lib/server/client";
 import withHandler, { DefaultResponseType } from "@/lib/server/withHandler";
+import { withApiSession } from "@/lib/server/withSession";
 import { NextApiRequest, NextApiResponse } from "next";
 
 interface ResponseType extends DefaultResponseType {
@@ -44,8 +45,10 @@ async function handler(
   res.status(200).json({ ok: true, msg: "Good." });
 }
 
-export default withHandler({
-  methods: ["POST"],
-  fn: handler,
-  access: "NOT_LOGGEDIN",
-});
+export default withApiSession(
+  withHandler({
+    methods: ["POST"],
+    fn: handler,
+    access: "NOT_LOGGEDIN",
+  }),
+);

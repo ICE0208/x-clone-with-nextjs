@@ -2,7 +2,6 @@ import Button from "@/components/button";
 import Input from "@/components/input";
 import useOnlyNotLoggedIn from "@/lib/client/middleware/useOnlyNotLoggedIn";
 import useMutation from "@/lib/client/useMutation";
-import useUser from "@/lib/client/useUser";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -36,7 +35,7 @@ export default function Login() {
   useEffect(() => {
     if (loginStatus === 200 && loginData) {
       if (loginData.ok) {
-        router.replace("/tweets");
+        router.push("/tweets");
       } else {
         alert(loginData.msg);
       }
