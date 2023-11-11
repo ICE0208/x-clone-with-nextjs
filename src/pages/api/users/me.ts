@@ -47,6 +47,6 @@ export default withApiSession(
   withHandler({
     methods: ["GET"],
     fn: handler,
-    access: "LOGGEDIN",
+    access: "PUBLIC",
   }),
 );

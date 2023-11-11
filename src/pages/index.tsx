@@ -1,11 +1,8 @@
 import Button from "@/components/button";
-import useOnlyNotLoggedIn from "@/lib/client/middleware/useOnlyNotLoggedIn";
 import { routerPushFn } from "@/lib/client/utils";
 import { useRouter } from "next/router";
 
 export default function Home() {
-  const { isLoading } = useOnlyNotLoggedIn();
-
   const router = useRouter();
   return (
     <main className="h-screen bg-black text-white">

@@ -1,6 +1,5 @@
 import Button from "@/components/button";
 import Input from "@/components/input";
-import useOnlyNotLoggedIn from "@/lib/client/middleware/useOnlyNotLoggedIn";
 import useMutation from "@/lib/client/useMutation";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -18,8 +17,6 @@ interface LoginMutationResult {
 }
 
 export default function Login() {
-  const { isLoading } = useOnlyNotLoggedIn();
-
   const { register, handleSubmit } = useForm<LoginForm>();
   const [
     login,

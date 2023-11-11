@@ -1,4 +1,3 @@
-import useOnlyLoggedIn from "@/lib/client/middleware/useOnlyLoggedIn";
 import useMutation from "@/lib/client/useMutation";
 import useUser from "@/lib/client/useUser";
 import { Tweet } from "@prisma/client";
