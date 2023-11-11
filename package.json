@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db-sync": "npx prisma migrate dev"
+    "db-sync": "npx prisma migrate dev",
+    "prismaDev": "dotenv -e .env.local prisma migrate dev "
   },
   "dependencies": {
     "@prisma/client": "^5.5.2",
+    "dotenv-cli": "^7.3.0",
     "next": "14.0.1",
     "prisma": "^5.5.2",
     "react": "^18",
