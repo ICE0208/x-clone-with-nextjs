@@ -1,9 +1,7 @@
-import { AnyARecord } from "dns";
 import { NextApiRequest, NextApiResponse } from "next";
 
-export interface ResponseType {
+export interface DefaultResponseType {
   ok: boolean;
-  [key: string]: any;
 }
 
 type Method = "GET" | "POST" | "DELETE";

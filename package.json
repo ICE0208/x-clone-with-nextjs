@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "db-sync": "npx prisma migrate dev",
-    "prismaDev": "dotenv -e .env.local prisma migrate dev "
+    "prismaDev": "dotenv -e .env.local prisma migrate dev",
+    "prismaStudio": "dotenv -e .env.local prisma studio"
   },
   "dependencies": {
     "@prisma/client": "^5.5.2",
