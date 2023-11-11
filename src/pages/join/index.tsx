@@ -1,9 +1,12 @@
 import Button from "@/components/button";
+import useOnlyNotLoggedIn from "@/lib/client/middleware/useOnlyNotLoggedIn";
 import { routerPushFn } from "@/lib/client/utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function Join() {
+  const { isLoading } = useOnlyNotLoggedIn();
+
   const router = useRouter();
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">

@@ -1,5 +1,6 @@
 import Button from "@/components/button";
 import Input from "@/components/input";
+import useOnlyNotLoggedIn from "@/lib/client/middleware/useOnlyNotLoggedIn";
 import useMutation from "@/lib/client/useMutation";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -18,6 +19,8 @@ interface EnterMutationResult {
 }
 
 export default function Create() {
+  const { isLoading } = useOnlyNotLoggedIn();
+
   const { register, handleSubmit } = useForm<CreateForm>();
   const [
     enter,
@@ -33,7 +36,7 @@ export default function Create() {
   useEffect(() => {
     if (enterStatus === 200 && enterData) {
       if (enterData.ok) {
-        router.push("/login");
+        router.replace("/login");
       } else {
         alert(enterData.msg);
       }
