@@ -32,7 +32,7 @@ export default function Login() {
   useEffect(() => {
     if (loginStatus === 200 && loginData) {
       if (loginData.ok) {
-        router.push("/");
+        router.push("/tweets");
       } else {
         alert(loginData.msg);
       }

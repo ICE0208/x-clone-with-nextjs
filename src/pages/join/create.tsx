@@ -33,7 +33,7 @@ export default function Create() {
   useEffect(() => {
     if (enterStatus === 200 && enterData) {
       if (enterData.ok) {
-        router.push("/");
+        router.push("/login");
       } else {
         alert(enterData.msg);
       }

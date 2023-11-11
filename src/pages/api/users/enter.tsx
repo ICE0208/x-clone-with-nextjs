@@ -47,5 +47,5 @@ async function handler(
 export default withHandler({
   methods: ["POST"],
   fn: handler,
-  isPrivate: false,
+  access: "NOT_LOGGEDIN",
 });
