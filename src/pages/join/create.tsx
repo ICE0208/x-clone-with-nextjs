@@ -31,10 +31,10 @@ export default function Create() {
 
   const router = useRouter();
   useEffect(() => {
-    if (enterStatus === 200) {
-      if (enterData?.ok) {
+    if (enterStatus === 200 && enterData) {
+      if (enterData.ok) {
         router.push("/");
-      } else if (enterData?.ok === false) {
+      } else {
         alert(enterData.msg);
       }
     }

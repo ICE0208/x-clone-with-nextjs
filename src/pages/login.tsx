@@ -1,9 +1,44 @@
 import Button from "@/components/button";
 import Input from "@/components/input";
+import useMutation from "@/lib/client/useMutation";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+interface LoginForm {
+  email: string;
+  password: string;
+}
+
+interface LoginMutationResult {
+  ok: boolean;
+  msg?: string;
+}
 
 export default function Login() {
+  const { register, handleSubmit } = useForm<LoginForm>();
+  const [
+    login,
+    { loading: loginLoading, data: loginData, status: loginStatus },
+  ] = useMutation<LoginMutationResult>("/api/users/login");
+
+  const onSubmit: SubmitHandler<LoginForm> = (data) => {
+    if (loginLoading) return;
+    login(data);
+  };
+
+  const router = useRouter();
+  useEffect(() => {
+    if (loginStatus === 200 && loginData) {
+      if (loginData.ok) {
+        router.push("/");
+      } else {
+        alert(loginData.msg);
+      }
+    }
+  }, [router, loginData, loginStatus]);
+
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
       <header className="flex h-12 items-center justify-center">
@@ -25,9 +60,17 @@ export default function Login() {
               <span className="bg-black px-[8px]">또는</span>
             </div>
           </div>
-          <form className="mt-2 space-y-4">
-            <Input placeholder="이메일 주소" />
-            <Input placeholder="비밀번호" />
+          <form onSubmit={handleSubmit(onSubmit)} className="mt-2 space-y-4">
+            <Input
+              register={register("email", { required: true })}
+              type="email"
+              placeholder="이메일 주소"
+            />
+            <Input
+              register={register("password", { required: true })}
+              type="password"
+              placeholder="비밀번호"
+            />
             <Button text="로그인" kind="white-black" />
           </form>
           <div className="mt-4 space-y-8">
