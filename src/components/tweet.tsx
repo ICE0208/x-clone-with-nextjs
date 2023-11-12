@@ -47,13 +47,15 @@ export default function TweetPreview({ tweet }: { tweet: TweetWithDetail }) {
             <div ref={textRef}>
               {tweet.text.split("\n").map((line, index) => (
                 <React.Fragment key={index}>
-                  {line}
+                  <p className="break-all">{line}</p>
                   <br />
                 </React.Fragment>
               ))}
             </div>
           </div>
-          {isOverflow ? <div className="flex justify-center">⋮</div> : null}
+          {isOverflow ? (
+            <div className="mt-2 flex justify-center">⋮</div>
+          ) : null}
           <div className="text-sm">
             <div className="mt-4 text-gray-400">
               <span>

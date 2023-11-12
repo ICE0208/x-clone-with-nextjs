@@ -112,10 +112,10 @@ export default function TweetDetail() {
                 <span>{detail.tweet.user.name}</span>
               </div>
               <hr className="my-3" />
-              <div className="scrollbar-hide flex-grow overflow-auto">
+              <div className="scrollbar-hide flex-grow overflow-y-auto">
                 {detail.tweet.text.split("\n").map((line, index) => (
                   <React.Fragment key={index}>
-                    {line}
+                    <p className="break-all">{line}</p>
                     <br />
                   </React.Fragment>
                 ))}
