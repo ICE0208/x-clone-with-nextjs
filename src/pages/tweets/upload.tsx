@@ -42,7 +42,7 @@ export default function Upload() {
             </button>
           </header>
           <main className="flex flex-grow items-center justify-center">
-            <div className="fle flex w-[300px] flex-col">
+            <div className="flex w-[300px] flex-col">
               <h3 className="text-[26px] font-bold">글쓰기</h3>
               <form
                 onSubmit={handleSubmit(onSubmit)}
@@ -51,7 +51,7 @@ export default function Upload() {
                 <textarea
                   {...register("text", { required: true, maxLength: 300 })}
                   maxLength={300}
-                  className="test-white box-border w-full resize-none rounded-2xl border border-white bg-black p-4 focus:outline-none"
+                  className="scrollbar-hide test-white box-border w-full resize-none rounded-2xl border border-white bg-black p-4 focus:outline-none"
                   rows={10}
                 ></textarea>
                 <Button text="게시" kind="white-black" />
