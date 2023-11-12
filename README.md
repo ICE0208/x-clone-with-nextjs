@@ -1,40 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# <span id="top">X Mini Clone with NextJS </span>
 
-## Getting Started
+<br>
+<div align="center">
+ <div><a href="https://x-clone-with-nextjs.vercel.app/" target="_blank">🔗 배포 URL</a></div>
+  
+</div>
 
-First, run the development server:
+## <br>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 무엇을 만들었나? (프로젝트 소개)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+X(Twitter)의 미니 클론 버전을 만들었습니다.  
+회원가입, 로그인, 게시글 쓰기, 게시글 좋아요 누르기 기능을 만들었습니다.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 왜 만들었나? (제작 목적)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+노마드 코더 리액트 스터디 3기 졸업과제를 위해 만들었습니다.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 언제 만들었나? (제작 기간)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2023.11.06 ~ 2023.11.13
 
-## Learn More
+## 어떻게 만들었나? (대표 개발 기술)
 
-To learn more about Next.js, take a look at the following resources:
+NextJS, TypeScript, TailwindCSS, Prisma를 이용하여 개발하였습니다.  
+배포는 Vercel로 하였으며, DB는 Supabase의 postgreSQL를 이용했습니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 사진들
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+| <center>/</center>                                                                                                    | <center>/login</center>                                                                                               | <center>/join</center>                                                                                                |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/64127292-bdfb-4e3f-b7cc-3dcd77510188"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/d0ebd3de-51c0-4f65-83bc-f5d4ae96450a"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/f9e4c887-6cd3-4c3c-9d78-527d2c3435c1"></img> |
 
-## Deploy on Vercel
+| <center>/join/create</center>                                                                                         | <center>/tweets</center>                                                                                              |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/02122019-79aa-44ed-b923-8926c0adf0c4"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/705f7b76-11c5-4bac-a6f9-3f486028320a"></img> |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| <center>/tweets/:id</center>                                                                                          | <center>/tweets/upload</center>                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/e508e281-773d-44a9-b09b-a58e918ca07b"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/623e46d9-dab2-4f1e-8358-4fd7d25714fa"></img> |
