@@ -37,7 +37,7 @@ export default function Tweets() {
 
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
-      {tweetsData && (
+      {tweetsData?.tweets && (
         <>
           <header className="flex h-12 items-center justify-center">
             <div className="text-[40px] font-bold">𝕏</div>
