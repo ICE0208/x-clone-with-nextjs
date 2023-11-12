@@ -1,9 +1,10 @@
+import TweetPreview from "@/components/tweet";
 import useMutation from "@/lib/client/useMutation";
 import useUser from "@/lib/client/useUser";
 import { Tweet } from "@prisma/client";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import useSWR from "swr";
 
 export interface TweetWithDetail extends Tweet {
@@ -35,35 +36,27 @@ export default function Tweets() {
   };
 
   return (
-    <main className="h-screen bg-black text-white">
-      {user && tweetsData?.tweets && (
+    <div className="flex min-h-screen flex-col bg-black text-white">
+      {tweetsData && (
         <>
-          <h1>Tweets</h1>
-          <Link href="/tweets/upload">Upload</Link>
-          <div>
-            <button onClick={handleLogoutButton}>Logout</button>
-          </div>
-          {tweetsData.tweets.map((tweet) => {
-            return (
-              <div key={tweet.id}>
-                <Link
-                  href={{
-                    pathname: `/tweets/${tweet.id}`,
-                    query: { tweetDetail: JSON.stringify(tweet) },
-                  }}
-                  as={`/tweets/${tweet.id}`}
-                >
-                  <div className="space-x-2">
-                    <span>{tweet.text}</span>
-                    <span>{tweet.user.name}</span>
-                    <span>{tweet._count.likes}</span>L
-                  </div>
-                </Link>
+          <header className="flex h-12 items-center justify-center">
+            <div className="text-[40px] font-bold">𝕏</div>
+          </header>
+          <main className="flex flex-grow justify-center">
+            <div className="flex w-[300px] flex-col">
+              <h3 className="mb-4 border-b border-b-white py-2 text-[26px] font-bold">
+                모든 게시글
+              </h3>
+
+              <div className="space-y-4 pb-12 pt-4">
+                {tweetsData.tweets.map((tweet) => (
+                  <TweetPreview key={tweet.id} tweet={tweet} />
+                ))}
               </div>
-            );
-          })}
+            </div>
+          </main>
         </>
       )}
-    </main>
+    </div>
   );
 }
