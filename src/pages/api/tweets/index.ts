@@ -18,6 +18,7 @@ async function handler(
         include: {
           user: {
             select: {
+              id: true,
               name: true,
             },
           },

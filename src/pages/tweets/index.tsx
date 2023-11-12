@@ -6,8 +6,9 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import useSWR from "swr";
 
-interface TweetWithLikesCnt extends Tweet {
+export interface TweetWithDetail extends Tweet {
   user: {
+    id: number;
     name: string;
   };
   _count: {
@@ -17,11 +18,7 @@ interface TweetWithLikesCnt extends Tweet {
 
 interface TweetsResponse {
   ok: boolean;
-  tweets: TweetWithLikesCnt[];
-}
-
-interface LogoutResponse {
-  ok: boolean;
+  tweets: TweetWithDetail[];
 }
 
 export default function Tweets() {
@@ -49,11 +46,19 @@ export default function Tweets() {
           {tweetsData.tweets.map((tweet) => {
             return (
               <div key={tweet.id}>
-                <div className="space-x-2">
-                  <span>{tweet.text}</span>
-                  <span>{tweet.user.name}</span>
-                  <span>{tweet._count.likes}</span>
-                </div>
+                <Link
+                  href={{
+                    pathname: `/tweets/${tweet.id}`,
+                    query: { tweetDetail: JSON.stringify(tweet) },
+                  }}
+                  as={`/tweets/${tweet.id}`}
+                >
+                  <div className="space-x-2">
+                    <span>{tweet.text}</span>
+                    <span>{tweet.user.name}</span>
+                    <span>{tweet._count.likes}</span>L
+                  </div>
+                </Link>
               </div>
             );
           })}
