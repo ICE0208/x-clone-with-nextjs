@@ -2,7 +2,8 @@
 
 <br>
 <div align="center">
-<img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/8f32e284-8dc0-454f-b9a5-cfcd40136170">
+<div> <a href="https://x-clone-with-nextjs.vercel.app/" target="_blank"><img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/8f32e284-8dc0-454f-b9a5-cfcd40136170" width="500"></a></div>
+ <br>
  <div><a href="https://x-clone-with-nextjs.vercel.app/" target="_blank">🔗 배포 URL</a></div>
   
 </div>
