@@ -59,3 +59,18 @@ NextJS, TypeScript, TailwindCSS, Prisma를 이용하여 개발하였습니다.
 - 댓글 기능
 - 본인 닉네임, 비밀번호 변경 기능
 - 탈퇴 기능
+
+## 실행 해보기
+
+- 최상위 경로에 .env.local 파일 생성 후 아래 표 참고해서 채우기
+
+| KEY                 | VALUE's description             |
+| ------------------- | ------------------------------- |
+| POSTGRES_PRISMA_URL | your sql url (maybe postgreSQL) |
+| COOKIE_NAME         | your cookie name                |
+| COOKIE_PASSWORD     | your cookie password            |
+
+- `npm run prismaDevPush` : Prisma 모델을 데이터베이스에 적용하여 개발 환경을 업데이트합니다. (모델을 변경했으면 실행해줍시다.)
+- `npx prisma generate` : Prisma 모델을 기반으로 코드를 자동 생성하여 개발 생산성을 향상시킵니다. (schema.prisma 파일을 변경하면 실행해줍시다.)
+- `npm run prismaStudio` : Prisma Studio 도구를 실행하는 명령어로, 데이터베이스 시각화와 효율적인 데이터 조작을 제공하여 개발 및 디버깅을 용이하게 합니다. (Not Required)
+- `npm run dev` : Next.js 애플리케이션을 개발 서버 모드로 실행합니다
