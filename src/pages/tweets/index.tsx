@@ -37,16 +37,19 @@ export default function Tweets() {
 
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
-      {tweetsData?.tweets && (
+      {tweetsData?.tweets && user && (
         <>
           <header className="flex h-12 items-center justify-center">
             <div className="text-[40px] font-bold">𝕏</div>
-            <button
-              onClick={handleLogoutButton}
-              className="absolute right-3 top-3 rounded-md border-2 px-2 py-1"
-            >
-              LogOut
-            </button>
+            <div className="absolute right-3 top-3 flex items-center">
+              <span className="mr-2 text-lg">🐹 {user.name}</span>
+              <button
+                onClick={handleLogoutButton}
+                className="rounded-md border-2 px-2 py-1 font-semibold"
+              >
+                LogOut
+              </button>
+            </div>
           </header>
           <main className="flex flex-grow justify-center">
             <div className="flex w-[300px] flex-col">
