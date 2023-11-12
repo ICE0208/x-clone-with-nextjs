@@ -1,40 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# <span id="top">X Mini Clone with NextJS </span>
 
-## Getting Started
+<br>
+<div align="center">
+ <div><a href="https://x-clone-with-nextjs.vercel.app/" target="_blank">🔗 배포 URL</a></div>
+  
+</div>
 
-First, run the development server:
+<br>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 무엇을 만들었나? (프로젝트 소개)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+X(Twitter)의 미니 클론 버전을 만들었습니다.  
+회원가입, 로그인, 게시글 쓰기, 게시글 좋아요 누르기 기능을 만들었습니다.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<br>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 왜 만들었나? (제작 목적)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+노마드 코더 리액트 스터디 3기 졸업과제를 위해 만들었습니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<br>
 
-## Learn More
+## 언제 만들었나? (제작 기간)
 
-To learn more about Next.js, take a look at the following resources:
+2023.11.06 ~ 2023.11.13
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 어떻게 만들었나? (대표 개발 기술)
 
-## Deploy on Vercel
+NextJS, TypeScript, TailwindCSS, Prisma를 이용하여 개발하였습니다.  
+배포는 Vercel로 하였으며, DB는 Supabase의 postgreSQL를 이용했습니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<br>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 사진들
+
+| <center>/</center>                                                                                                    | <center>/login</center>                                                                                               | <center>ㅤ/joinㅤ</center>                                                                                            |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/d5e0ade7-0315-443d-9dfb-23dd87ee1ec9"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/eb5870b7-f513-425e-a81e-254470d0d7fe"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/e3c28642-5567-4bb8-bb12-13f87aaa8e7f"></img> |
+| ==============                                                                                                        | ==============                                                                                                        | ==============                                                                                                        |
+
+| <center>/join/create</center>                                                                                         | <center>/tweets</center>                                                                                              |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/02122019-79aa-44ed-b923-8926c0adf0c4"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/705f7b76-11c5-4bac-a6f9-3f486028320a"></img> |
+| ==============                                                                                                        | ==============                                                                                                        |
+
+| <center>/tweets/:id</center>                                                                                          | <center>/tweets/upload</center>                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/e508e281-773d-44a9-b09b-a58e918ca07b"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/623e46d9-dab2-4f1e-8358-4fd7d25714fa"></img> |
+| ==============                                                                                                        | ==============                                                                                                        |
+
+<br>
+
+## 앞으로 추가할 것들
+
+- 본인 글 수정, 삭제 기능
+- 댓글 기능
+- 본인 닉네임, 비밀번호 변경 기능
+- 탈퇴 기능
