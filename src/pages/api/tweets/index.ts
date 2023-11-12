@@ -28,6 +28,9 @@ async function handler(
             },
           },
         },
+        orderBy: {
+          createdAt: "desc",
+        },
       });
 
       return res.json({ ok: true, tweets });
