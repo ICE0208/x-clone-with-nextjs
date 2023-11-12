@@ -120,42 +120,44 @@ export default function TweetDetail() {
                   </React.Fragment>
                 ))}
               </div>
-              <div className="mt-4 text-gray-400">
-                <span>
-                  {format(
-                    new Date(detail.tweet.createdAt),
-                    `a HH:mm · yyyy-MM-dd`,
-                  )}
-                </span>
-              </div>
-              <div className="flex items-center">
-                <button
-                  onClick={onLikeClick}
-                  className={cls(
-                    detail.isLiked
-                      ? "text-red-400  hover:text-red-500"
-                      : "text-gray-400  hover:text-gray-500",
-                  )}
-                >
-                  <svg
-                    className="h-5 w-5 "
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill={detail?.isLiked ? "currentColor" : "none"}
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
+              <div className="text-sm">
+                <div className="mt-4 text-gray-400">
+                  <span>
+                    {format(
+                      new Date(detail.tweet.createdAt),
+                      `a HH:mm · yyyy-MM-dd`,
+                    )}
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <button
+                    onClick={onLikeClick}
+                    className={cls(
+                      detail.isLiked
+                        ? "text-red-400  hover:text-red-500"
+                        : "text-gray-400  hover:text-gray-500",
+                    )}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                    />
-                  </svg>
-                </button>
-                <span className="ml-1 text-gray-400">
-                  {detail.tweet._count.likes}
-                </span>
+                    <svg
+                      className="h-5 w-5 "
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill={detail?.isLiked ? "currentColor" : "none"}
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                      />
+                    </svg>
+                  </button>
+                  <span className="ml-1 text-gray-400">
+                    {detail.tweet._count.likes}
+                  </span>
+                </div>
               </div>
             </div>
           </main>

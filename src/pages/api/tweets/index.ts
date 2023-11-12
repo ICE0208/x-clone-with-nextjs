@@ -38,32 +38,32 @@ async function handler(
   }
   if (req.method === "POST") {
     const {
-      body: { userId, text },
+      body: { text },
       session: { user: sessionUser },
     }: { body: { userId: string; text: string }; session: IronSessionData } =
       req;
 
     // body Data 검증
-    if (!userId || !text) {
-      return res
-        .status(400)
-        .json({ ok: false, msg: "need more data (userId AND text)" });
+    if (!text) {
+      return res.status(400).json({ ok: false, msg: "need more data (text)" });
     }
-    // session 유저 인증
-    if (sessionUser?.id !== +userId) {
-      return res.status(400).json({ ok: false, msg: "user auth error" });
-    } // 텍스트 길이 제한
-    if (text.length > 300) {
+    // session
+    if (!sessionUser?.id) {
+      return res.status(400).json({ ok: false });
+    }
+    // 텍스트 길이 제한
+    const trimText = text.trim();
+    if (trimText.length > 300) {
       return res.json({ ok: false, msg: "the text is too long" });
     }
 
     try {
       const tweet = await client.tweet.create({
         data: {
-          text: text,
+          text: trimText,
           user: {
             connect: {
-              id: sessionUser.id,
+              id: sessionUser?.id,
             },
           },
         },
