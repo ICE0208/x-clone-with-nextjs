@@ -6,7 +6,8 @@ import { IronSessionData } from "iron-session";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export interface TweetDetailResponseType extends DefaultResponseType {
-  tweet: TweetWithDetail | null;
+  tweet?: TweetWithDetail | null;
+  isLiked?: boolean;
   [key: string]: any;
 }
 
@@ -15,7 +16,8 @@ async function handler(
   res: NextApiResponse<TweetDetailResponseType>,
 ) {
   const id = req.query.id;
-  if (typeof id !== "string") {
+  const user = req.session.user;
+  if (typeof id !== "string" || !user) {
     return res.status(400).end();
   }
 
@@ -42,7 +44,20 @@ async function handler(
     if (!tweet) {
       return res.status(404).json({ ok: false, tweet: null });
     }
-    return res.status(200).json({ ok: true, tweet: tweet });
+
+    const isLiked = Boolean(
+      await client.like.findFirst({
+        where: {
+          tweetId: tweet.id,
+          userId: user.id,
+        },
+        select: {
+          id: true,
+        },
+      }),
+    );
+
+    return res.status(200).json({ ok: true, tweet: tweet, isLiked: isLiked });
   } catch (error) {
     console.log(`DB Error | Tweet Find | error: ${error}`);
     return res
