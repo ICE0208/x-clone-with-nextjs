@@ -41,6 +41,12 @@ export default function Tweets() {
         <>
           <header className="flex h-12 items-center justify-center">
             <div className="text-[40px] font-bold">𝕏</div>
+            <button
+              onClick={handleLogoutButton}
+              className="absolute right-3 top-3 rounded-md border-2 px-2 py-1"
+            >
+              LogOut
+            </button>
           </header>
           <main className="flex flex-grow justify-center">
             <div className="flex w-[300px] flex-col">
