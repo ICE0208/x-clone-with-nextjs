@@ -6,7 +6,7 @@
   
 </div>
 
-## <br>
+<br>
 
 ## 무엇을 만들었나? (프로젝트 소개)
 
@@ -28,14 +28,17 @@ NextJS, TypeScript, TailwindCSS, Prisma를 이용하여 개발하였습니다.
 
 ## 사진들
 
-| <center>/</center>                                                                                                    | <center>/login</center>                                                                                               | <center>/join</center>                                                                                                |
+| <center>/</center>                                                                                                    | <center>/login</center>                                                                                               | <center>ㅤ/joinㅤ</center>                                                                                            |
 | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/64127292-bdfb-4e3f-b7cc-3dcd77510188"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/d0ebd3de-51c0-4f65-83bc-f5d4ae96450a"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/f9e4c887-6cd3-4c3c-9d78-527d2c3435c1"></img> |
+| <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/d5e0ade7-0315-443d-9dfb-23dd87ee1ec9"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/eb5870b7-f513-425e-a81e-254470d0d7fe"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/e3c28642-5567-4bb8-bb12-13f87aaa8e7f"></img> |
+| ==============                                                                                                        | ==============                                                                                                        | ==============                                                                                                        |
 
 | <center>/join/create</center>                                                                                         | <center>/tweets</center>                                                                                              |
 | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/02122019-79aa-44ed-b923-8926c0adf0c4"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/705f7b76-11c5-4bac-a6f9-3f486028320a"></img> |
+| ==============                                                                                                        | ==============                                                                                                        |
 
 | <center>/tweets/:id</center>                                                                                          | <center>/tweets/upload</center>                                                                                       |
 | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/e508e281-773d-44a9-b09b-a58e918ca07b"></img> | <img src="https://github.com/ICE0208/x-clone-with-nextjs/assets/46257328/623e46d9-dab2-4f1e-8358-4fd7d25714fa"></img> |
+| ==============                                                                                                        | ==============                                                                                                        |
