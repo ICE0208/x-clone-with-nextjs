@@ -49,7 +49,6 @@ export default function TweetPreview({ tweet }: { tweet: TweetWithDetail }) {
                 {tweet.text.split("\n").map((line, index) => (
                   <React.Fragment key={index}>
                     <p className="break-all">{line}</p>
-                    <br />
                   </React.Fragment>
                 ))}
               </div>

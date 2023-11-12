@@ -1,3 +1,4 @@
+import Button from "@/components/button";
 import TweetPreview from "@/components/tweet";
 import useMutation from "@/lib/client/useMutation";
 import useUser from "@/lib/client/useUser";
@@ -56,7 +57,16 @@ export default function Tweets() {
               <h3 className="mb-4 border-b border-b-white py-2 text-[26px] font-bold">
                 모든 게시글
               </h3>
-
+              <div className="scrollbar-hide test-white box-border w-full resize-none space-y-3 rounded-3xl border border-white bg-black p-4">
+                <span>당신의 경험을 공유해보세요.</span>
+                <Button
+                  kind="transparent-blue"
+                  text="글쓰러 가기"
+                  onClick={() => {
+                    router.push("/tweets/upload");
+                  }}
+                />
+              </div>
               <div className="space-y-4 pb-12 pt-4">
                 {tweetsData.tweets.map((tweet) => (
                   <TweetPreview key={tweet.id} tweet={tweet} />
