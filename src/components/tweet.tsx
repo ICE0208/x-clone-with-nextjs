@@ -35,7 +35,7 @@ export default function TweetPreview({ tweet }: { tweet: TweetWithDetail }) {
           key={tweet.id}
           className="scrollbar-hide test-white box-border w-full resize-none rounded-2xl border border-white bg-black p-4"
         >
-          <div className="flex flex-col space-x-2">
+          <div className="flex flex-col">
             <div className="flex space-x-2 text-lg">
               <div>🐹</div>
               <span>{tweet.user.name}</span>

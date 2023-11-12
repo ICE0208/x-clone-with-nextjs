@@ -101,12 +101,12 @@ export default function TweetDetail() {
         <>
           <header className="flex h-12 items-center justify-center">
             <div className="text-[40px] font-bold">𝕏</div>
-            <button className="absolute left-3 top-3 text-[18px]">
-              <Link href="/tweets">✕</Link>
+            <button className="absolute left-5 top-5 text-3xl">
+              <Link href="/">✕</Link>
             </button>
           </header>
           <main className="flex flex-grow items-center justify-center">
-            <div className="test-white box-border flex h-[300px] w-[300px] resize-none flex-col rounded-2xl border border-white bg-black p-4">
+            <div className="test-white box-border flex h-[500px] w-[300px] resize-none flex-col rounded-2xl border border-white bg-black p-4 md:w-[400px] xl:w-[500px]">
               <div className="flex space-x-2 text-lg">
                 <div>🐹</div>
                 <span>{detail.tweet.user.name}</span>

@@ -53,7 +53,7 @@ export default function Tweets() {
             </div>
           </header>
           <main className="flex flex-grow justify-center">
-            <div className="flex w-[300px] flex-col">
+            <div className="flex w-[300px] flex-col md:w-[400px] xl:w-[500px]">
               <h3 className="mb-4 border-b border-b-white py-2 text-[26px] font-bold">
                 모든 게시글
               </h3>
