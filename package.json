@@ -7,8 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db-sync": "npx prisma migrate dev",
-    "prismaDevMigrate": "dotenv -e .env.local prisma migrate dev",
     "prismaDevPush": "dotenv -e .env.local prisma db push",
     "prismaStudio": "dotenv -e .env.local prisma studio"
   },
