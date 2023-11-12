@@ -64,7 +64,8 @@ NextJS, TypeScript, TailwindCSS, Prisma를 이용하여 개발하였습니다.
 
 ## 실행 해보기
 
-- 최상위 경로에 .env.local 파일 생성 후 아래 표 참고해서 채우기
+- `npm install` : 당연히 해야하는거죠
+- 최상위 경로에 `.env.local` 파일 생성 후 아래 표 참고해서 채우시죠
 
 | KEY                 | VALUE's description             |
 | ------------------- | ------------------------------- |
