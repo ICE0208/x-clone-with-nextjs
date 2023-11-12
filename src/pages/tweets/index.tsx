@@ -42,8 +42,13 @@ export default function Tweets() {
         <>
           <header className="flex h-12 items-center justify-center">
             <div className="text-[40px] font-bold">𝕏</div>
-            <div className="absolute right-3 top-3 flex items-center">
+            <div className="absolute left-3 top-3 flex h-[36px] items-center sm:hidden">
               <span className="mr-2 text-lg">🐹 {user.name}</span>
+            </div>
+            <div className="absolute right-3 top-3 flex h-[36px] items-center">
+              <span className="mr-2 hidden text-lg sm:block">
+                🐹 {user.name}
+              </span>
               <button
                 onClick={handleLogoutButton}
                 className="rounded-md border-2 px-2 py-1 font-semibold"
