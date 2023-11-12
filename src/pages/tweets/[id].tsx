@@ -97,6 +97,7 @@ export default function TweetDetail() {
 
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
+      <title>X | Tweet Detail</title>
       {detail && (
         <>
           <header className="flex h-12 items-center justify-center">

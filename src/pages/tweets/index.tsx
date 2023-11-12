@@ -38,6 +38,7 @@ export default function Tweets() {
 
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
+      <title>X | Tweets</title>
       {tweetsData?.tweets && user && (
         <>
           <header className="flex h-12 items-center justify-center">

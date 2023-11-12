@@ -7,6 +7,7 @@ export default function Join() {
   const router = useRouter();
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
+      <title>X | Join</title>
       <header className="flex h-12 items-center justify-center">
         <div className="text-[40px] font-bold">𝕏</div>
         <button className="absolute left-5 top-5 text-3xl">

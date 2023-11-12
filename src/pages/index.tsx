@@ -6,6 +6,7 @@ export default function Home() {
   const router = useRouter();
   return (
     <main className="h-screen bg-black text-white">
+      <title>X | Welcome</title>
       <div className="flex h-full w-full items-center justify-center px-8 py-6">
         <div className="max-w-[400px] items-center justify-center gap-44 xl:flex xl:w-full xl:max-w-none">
           <div className="text-[56px] font-bold xl:text-[450px]">𝕏</div>
