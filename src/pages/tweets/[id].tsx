@@ -102,7 +102,7 @@ export default function TweetDetail() {
           <header className="flex h-12 items-center justify-center">
             <div className="text-[40px] font-bold">𝕏</div>
             <button className="absolute left-5 top-5 text-3xl">
-              <Link href="/">✕</Link>
+              <Link href="/tweets">✕</Link>
             </button>
           </header>
           <main className="flex flex-grow items-center justify-center">
